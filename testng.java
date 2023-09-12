@@ -9,15 +9,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class testng {
-@Test
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-
+@BeforeTest
 		WebDriverManager.chromedriver().setup();
 	    WebDriver driver = new ChromeDriver();
 	    driver.manage().window().maximize();
 	    driver.get("https://thesportstak.com");
-	    
+	@Test    
 	    //hindi language
 	     driver.findElement(By.xpath("//span[text()='Hindi']")).click();
 	  
@@ -42,7 +41,9 @@ public class testng {
 	   driver.findElement(By.xpath("/html/body/div/div[2]/main/div/div/div[2]/div/div/a[1]/section/div/div")).click();
 	   System.out.println("Ben Stokes equals Ricky Ponting-Waqar Younis sensational Test record");
 	   //next
+		
 	   driver.findElement(By.xpath("/html/body/amp-story/div[2]")).click();
+		@AfterTest
 	   driver.navigate().back();
 	   Thread.sleep(1000);
 	   
