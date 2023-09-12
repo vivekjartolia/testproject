@@ -8,15 +8,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
+@Test
 public class testng {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-@BeforeTest
+
 		WebDriverManager.chromedriver().setup();
 	    WebDriver driver = new ChromeDriver();
 	    driver.manage().window().maximize();
 	    driver.get("https://thesportstak.com");
-	@Test    
+	    
 	    //hindi language
 	     driver.findElement(By.xpath("//span[text()='Hindi']")).click();
 	  
@@ -43,7 +44,7 @@ public class testng {
 	   //next
 		
 	   driver.findElement(By.xpath("/html/body/amp-story/div[2]")).click();
-		@AfterTest
+
 	   driver.navigate().back();
 	   Thread.sleep(1000);
 	   
